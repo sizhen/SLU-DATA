@@ -1,0 +1,67 @@
+This package contains the necessary data to reproduce the results in the paper,
+Discriminative Spoken Language Understanding Using Word Confusion Networks
+(Henderson et al.), or to train and test new semantic decoders.
+
+corpus_traindev.xml
+    - 10571 data points used for training (first 9514) and development (last 1057).
+    - 1522 dialogues total
+
+corpus_test.xml
+    - 4882 data points used for testing.
+    - 644 dialogues total
+    
+These xml files contain a list of 'datum' elements of the following format:
+
+ <datum>
+    <transcription>hi i'd like a restaurant in the cheap price range in the centre part of town</transcription>    
+    <uact>inform(type=restaurant,pricerange=cheap,area=centre)</uact>
+    <turnnum>1</turnnum>
+    <lastsys>hello()</lastsys>
+    <asrhyps>
+        <hyp p='-3.36468'>HI  I  LIKE  A  RESTAURANT  IN  THE  CHEAP  PRICE  RANGE  IN  THE  CENTRE  OF  OF  TOWN</hyp>
+        <hyp p='-3.366073'>HI  I  LIKE  A  RESTAURANT  IN  THE  CHEAP  PRICE  RANGE  IN  THE  CENTRE  PART  TOWN</hyp>
+        <hyp p='-3.872642'>HI  I  LIKE  A  RESTAURANT  IN  THE  CHEAP  PRICE  RANGE  IN  THE  CENTRE  OF  TOWN</hyp>
+        <hyp p='-2.938081'>HI  I'D  LIKE  A  RESTAURANT  IN  THE  CHEAP  PRICE  RANGE  IN  THE  CENTRE  OF  TOWN</hyp>
+        <hyp p='-1.92355'>HI  I'D  LIKE  A  RESTAURANT  IN  THE  CHEAP  PRICE  RANGE  IN  THE  CENTRE  PART  OF  TOWN</hyp>
+        <hyp p='-4.060993'>HI  I'D  LIKE  A  RESTAURANT  IN  THE  CHEAP  PRICE  RANGE  IN  THE  CENTRAL  PART  OF  TOWN</hyp>
+        <hyp p='-4.392406'>HI  I'D  A  RESTAURANT  IN  THE  CHEAP  PRICE  RANGE  IN  THE  CENTRE  PART  OF  TOWN</hyp>
+        <hyp p='-2.858111'>HI  I  LIKE  A  RESTAURANT  IN  THE  CHEAP  PRICE  RANGE  IN  THE  CENTRE  PART  OF  TOWN</hyp>
+        <hyp p='-2.431512'>HI  I'D  LIKE  A  RESTAURANT  IN  THE  CHEAP  PRICE  RANGE  IN  THE  CENTRE  PART  TOWN</hyp>
+        <hyp p='-2.430119'>HI  I'D  LIKE  A  RESTAURANT  IN  THE  CHEAP  PRICE  RANGE  IN  THE  CENTRE  OF  OF  TOWN</hyp>
+    </asrhyps>
+    <rec fname='ky219x-001-111018_235207_0001085_0001609.wav' starttime='10.856' endtime='16.096' />
+</datum>
+
+- transcription: Transcription of what the user said in the recorded audio
+- uact : The true user act
+- turnnum : The index of the userturn in the dialogue, starting at 1. This is not used for any models described in the paper.
+- lastsys : The previous system act
+- asrhyps : the top 10 asr hypotheses. The p attribute is a posterior log probability. Note these aren't listed in rank order.
+- rec : details about the recording. fname is important for working out what confusion network file to look up.
+
+The computed confusion network features are found in the ./cnets folder.  E.g. the one for the above datum is at cnets/ky219x-001-111018_235207_0001085_0001609.rec 
+
+The format of the file is a sparse vector, with the index of the non-zero component coming before a colon (':'), and the value after, followed by a new line.  Following the line #value_mapping# is a map which takes database tags to their values. E.g.:
+#value_mapping#
+food+value+0 -> chinese
+means that the n-grams containing "food+value+0" originally contained the word "chinese".
+
+The indices correspond to n-grams for n up to 3. These are stored in ngrams.txt in the following format:
+
+n-gram ~ index ~ count in corpus_traindev.xml
+
+E.g.:
+
+price range a ~ 761 ~ 27
+price range ah ~ 762 ~ 26
+range of are ~ 763 ~ 3
+the restaurant is ~ 764 ~ 24
+of of ~ 765 ~ 91
+what is a ~ 766 ~ 82
+price range all ~ 767 ~ 2
+
+The counts are not used in any model described in the paper, but were used in experiments using tf-idf to weight features for non-linear SVM kernels and other models.
+
+Indices up to and including 509 correspond to the last system act features described in the paper. These start with the letters 'sys'.
+
+Any questions, please contact Matt Henderson, mh521@cam.ac.uk
