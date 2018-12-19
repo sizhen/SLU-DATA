@@ -7,8 +7,6 @@ There are datasets for SLU in three types:
 2. only tagging, without intent
 3. multi-turn dialogue
 
-| Datasets |  Domain | Vocab | #Train | #Test | #Slot | #Intent |
-
 <table>
   <tr>
     <td></td>
@@ -48,6 +46,86 @@ There are datasets for SLU in three types:
     <td>72</td>
     <td>7</td>
     <td>English</td>
+    <td></td>
+    <td></td>
+  </tr>
+  <tr>
+    <td rowspan="3">single-turn</td>
+    <td>MIT rest.</td>
+    <td>1</td>
+    <td>4166</td>
+    <td>7660</td>
+    <td> - </td>
+    <td>1521</td>
+    <td>17</td>
+    <td> - </td>
+    <td>English</td>
+    <td></td>
+    <td></td>
+  </tr>
+  <tr>
+    <td>MIT eng.</td>
+    <td>1</td>
+    <td>7481</td>
+    <td>9775</td>
+    <td> - </td>
+    <td>2443</td>
+    <td>25</td>
+    <td> - </td>
+    <td>English</td>
+    <td></td>
+    <td></td>
+  </tr>
+  <tr>
+    <td>MIT trivia10k13.</td>
+    <td>1</td>
+    <td>12145</td>
+    <td>7816</td>
+    <td> - </td>
+    <td>1953</td>
+    <td>25</td>
+    <td> - </td>
+    <td>English</td>
+    <td></td>
+    <td></td>
+  </tr>
+  <tr>
+    <td rowspan="3">multi-turn dialogue</td>
+    <td>DSTC 2</td>
+    <td>1</td>
+    <td> - </td>
+    <td>11677</td>
+    <td> - </td>
+    <td> 9890 </td>
+    <td> w/o BIO-format </td>
+    <td> - </td>
+    <td>English</td>
+    <td></td>
+    <td></td>
+  </tr>
+  <tr>
+    <td>incarslu</td>
+    <td>1</td>
+    <td>1145</td>
+    <td>10571</td>
+    <td> - </td>
+    <td> 4882 </td>
+    <td> 11 (w/o BIO-format) </td>
+    <td> 17 </td>
+    <td>English</td>
+    <td></td>
+    <td></td>
+  </tr>
+  <tr>
+    <td>nlpcc</td>
+    <td>3</td>
+    <td>5443</td>
+    <td>4705/21352</td>
+    <td> - </td>
+    <td>1177/5350</td>
+    <td>11</td>
+    <td>11</td>
+    <td>Chinese</td>
     <td></td>
     <td></td>
   </tr>
