@@ -20,7 +20,7 @@ dataset:
     <td>#Intent</td>
     <td>language</td>
     <td>paper</td>
-    <td>detail/download</td>
+    <td>detail</td>
   </tr>
   <tr>
     <td rowspan="2">single-turn</td>
@@ -48,7 +48,7 @@ dataset:
     <td></td>
   </tr>
   <tr>
-    <td rowspan="3">single-turn</td>
+    <td rowspan="3">only-tagging</td>
     <td>MIT rest.</td>
     <td>1</td>
     <td>4166</td>
