@@ -7,6 +7,7 @@ There are datasets for SLU in three types:
 2. only tagging, without intent
 3. multi-turn dialogue
 
+dataset:
 <table>
   <tr>
     <td></td>
@@ -14,7 +15,6 @@ There are datasets for SLU in three types:
     <td>Domain</td>
     <td>Vocab</td>
     <td>#Train</td>
-    <td>#Valid</td>
     <td>#Test</td>
     <td>#Slot</td>
     <td>#Intent</td>
@@ -28,7 +28,6 @@ There are datasets for SLU in three types:
     <td>1</td>
     <td>722</td>
     <td>4478</td>
-    <td>500</td>
     <td>893</td>
     <td>120</td>
     <td>21</td>
@@ -42,7 +41,6 @@ There are datasets for SLU in three types:
     <td>11241</td>
     <td>13084</td>
     <td>700</td>
-    <td>700</td>
     <td>72</td>
     <td>7</td>
     <td>English</td>
@@ -55,7 +53,6 @@ There are datasets for SLU in three types:
     <td>1</td>
     <td>4166</td>
     <td>7660</td>
-    <td> - </td>
     <td>1521</td>
     <td>17</td>
     <td> - </td>
@@ -68,7 +65,6 @@ There are datasets for SLU in three types:
     <td>1</td>
     <td>7481</td>
     <td>9775</td>
-    <td> - </td>
     <td>2443</td>
     <td>25</td>
     <td> - </td>
@@ -81,7 +77,6 @@ There are datasets for SLU in three types:
     <td>1</td>
     <td>12145</td>
     <td>7816</td>
-    <td> - </td>
     <td>1953</td>
     <td>25</td>
     <td> - </td>
@@ -95,7 +90,6 @@ There are datasets for SLU in three types:
     <td>1</td>
     <td> - </td>
     <td>11677</td>
-    <td> - </td>
     <td> 9890 </td>
     <td> w/o BIO-format </td>
     <td> - </td>
@@ -108,7 +102,6 @@ There are datasets for SLU in three types:
     <td>1</td>
     <td>1145</td>
     <td>10571</td>
-    <td> - </td>
     <td> 4882 </td>
     <td> 11 (w/o BIO-format) </td>
     <td> 17 </td>
@@ -121,7 +114,6 @@ There are datasets for SLU in three types:
     <td>3</td>
     <td>5443</td>
     <td>4705/21352</td>
-    <td> - </td>
     <td>1177/5350</td>
     <td>11</td>
     <td>11</td>
